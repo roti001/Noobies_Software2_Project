@@ -1,0 +1,48 @@
+DATABASE Name-Flight_404_Lost_Gift
+mysql -u root -p
+password- pysquad
+
+
+# select 15 airports for the game
+SELECT iso_country, ident, name, type, latitude_deg, longitude_deg
+FROM airport
+WHERE iso_country IN (SELECT iso_country FROM airport WHERE continent = 'EU')
+AND ident IN (SELECT MIN(ident) FROM airport WHERE continent = 'EU'AND type='large_airport' GROUP BY iso_country)
+ORDER by RAND()
+LIMIT 15;
+
+
+# create new game
+INSERT INTO game (money, fuel_range, location, screen_name) VALUES (999, 2000, 'EFHK', 'Tony')
+
+select * from goal;
+
+
+# exclude starting airport
+INSERT INTO ports (game, airport, goal) VALUES (1, 'EFHK', 2)
+select * from goal;
+
+
+# get airport info
+SELECT iso_country, ident, name, latitude_deg, longitude_deg
+FROM airport
+WHERE ident = 'EFHK';
+
+
+# check if airport has a goal
+SELECT ports.id, ports.goal, goal.id as goal_id, goal.name, goal.money
+FROM ports
+JOIN goal ON goal.id = ports.goal
+WHERE game = 1
+AND airport = 'EFHK';
+
+UPDATE ports SET opened = 1 WHERE game = 1 AND airport = 'EFHK';
+select * from ports;
+
+
+# update location
+UPDATE game SET location = 'EFYL', fuel_range = 2600, money = 399  WHERE id = 1
+
+
+airports= get_airports()
+create_game(999, 2000, 'xxxx', 'Tony', airports)
