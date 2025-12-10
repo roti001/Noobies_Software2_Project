@@ -18,12 +18,11 @@ connection = mysql.connector.connect(
 # FUNCTIONS
 # Select 15 airports for the game
 def get_airports():
-    sql="""SELECT iso_country, ident, name, type, latitude_deg, longitude_deg
-FROM airport
-WHERE continent = 'EU' 
-AND type='large_airport'
-ORDER by RAND()
-LIMIT 15;"""
+    sql="""SELECT ident, name, iso_country, latitude_deg, longitude_deg 
+            FROM airport 
+            WHERE continent='EU' AND type='large_airport'
+            ORDER BY RAND() 
+            LIMIT 15;"""
     cursor = connection.cursor(dictionary=True)
     cursor.execute(sql)
     result = cursor.fetchall()
@@ -225,7 +224,7 @@ while not game_over:
 
     # Ask to buy fuel
     if money > 0:
-        question2 = input('Do you want to by fuel? (1$ = 3km). Enter amount or press enter. ')
+        question2 = input('Do you want to by fuel? (1$ = 2km). Enter amount or press enter. ')
         if question2:
             amount = float(question2)
             if amount > money:

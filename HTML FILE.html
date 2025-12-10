@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight_404_Lost_Gift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Story & Name Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h1>Flight 404-Lost Gift</h1>
+            <div id="storyText"></div>
+            <input type="text" id="playerNameInput" placeholder="Enter your name to play">
+            <button id="modalStartBtn">Start Game</button>
+        </div>
+    </div>
+
+<!-- Game Screen -->
+    <div id="gameScreen" class="hidden">
+        <div id="leftPanel">
+            <h2>Player Info</h2>
+            <div id="status"></div>
+            <h3>Events</h3>
+            <div id="events"></div>
+            <h3>Decisions</h3>
+            <div id="options"></div>
+            <div id="fuelOption">
+                <input type="number" id="fuelAmount" placeholder="Enter $ to buy fuel">
+                <button id="buyFuelBtn">Buy Fuel</button>
+            </div>
+        </div>
+        <div id="rightPanel">
+            <canvas id="mapCanvas" width="1500" height="980"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

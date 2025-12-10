@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #e0f7fa;
+}
+
+.hidden { display: none; }
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    display: flex; justify-content:center; align-items: center;
+    z-index: 10;
+}
+.modal-content {
+    background: white; padding: 20px;
+    max-width: 700px; max-height: 80%;
+    overflow-y: auto; border-radius: 10px; text-align: center;
+}
+#storyText { margin: 10px 0; font-size: 16px; line-height: 1.4; max-height: 300px; overflow-y: auto; }
+#playerNameInput { padding: 8px; font-size: 16px; width: 70%; margin-bottom: 10px; }
+#modalStartBtn {
+    padding: 10px 20px; font-size: 16px; cursor: pointer;
+    border-radius: 6px; background-color: #0288d1; color: white; border: none;
+}
+#modalStartBtn:hover { background-color: #0277bd; }
+
+/* Game Screen */
+#gameScreen { display: flex; height: 100vh; }
+#leftPanel { width: 500px; background: #ffffffcc; padding: 20px; overflow-y: auto; }
+#rightPanel { flex: 1; position: relative; }
+
+/* Buttons */
+button.optionBtn {
+    padding: 8px 12px; margin: 5px 0; width: 100%; font-size: 16px;
+    cursor: pointer; border-radius: 6px; border: none; background-color: #0288d1; color: white;
+}
+button.optionBtn:hover { background-color: #0277bd; }
+.eventMessage {
+    background: #ffecb3; padding: 8px; margin: 5px 0; border-radius: 6px;
+}
+
+#fuelOption { margin-top: 10px; }
+#fuelAmount { width: 60%; padding: 6px; }
+#buyFuelBtn {
+    padding: 6px 12px; margin-left: 5px; border-radius: 6px;
+    border: none; background-color: #0288d1; color: white; cursor: pointer;
+}
+#buyFuelBtn:hover { background-color: #0277bd; }
